@@ -53,6 +53,7 @@ class index extends Controller
 		}
 	}
 	public function com_add(){
+		echo 1;exit;
 		$tid=$_GET['tid'];
 		return view('index/comadd',compact('tid'));
 	}
@@ -101,7 +102,22 @@ class index extends Controller
 	}
 	public function xsadd(){
 		$arr=$_POST;
-		print_r($arr);exit;
+		$ltime=time()+$arr['day']*60*24*60;
+		$array=[
+			'p_title'=>$arr['title'],
+			'p_time'=>time(),
+			'p_content'=>$arr['content'],
+			'p_uid'=>'1',
+			'p_type'=>"悬赏",
+			'p_ltime'=>$ltime,
+			'p_price'=>$arr['price']
+		];
+		$data=DB::table('post')->insert($array);
+		if($data){
+			echo '发布悬赏成功';
+		}else{
+			echo '发布悬赏失败';
+		}
 	}
 
 

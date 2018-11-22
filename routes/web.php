@@ -32,7 +32,9 @@ Route::any('/show',"index@index");
 Route::any('/p_list',"index@p_list");
 Route::any('/postinfo',"index@info");
 Route::any('/geninfo',"index@geninfo");
+//悬赏
 Route::any('/xs',"index@xs");
+Route::any('/xsadd',"index@xsadd");
 //添加
 Route::any('/addpost',"index@addpost");
 Route::any('/addpost_do',"index@addpost_do");

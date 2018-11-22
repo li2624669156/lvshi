@@ -22,14 +22,26 @@
   
   <body>
     <div class="x-body">
-        <form class="layui-form" action="/com_adddo" method="post">
+        <form class="layui-form" action="/xsadd" method="post">
 		{{ csrf_field() }}
+			<div class="layui-form-item">
+              <label for="username" class="layui-form-label">
+                  <span class="x-red">*</span>标题
+              </label>
+              <div class="layui-input-inline">
+                  <input type="text" id="username" name="title" required="" lay-verify="required"
+                  autocomplete="off" class="layui-input">
+              </div>
+              <div class="layui-form-mid layui-word-aux">
+                  <span class="x-red">*</span>必填
+              </div>
+          </div>
           <div class="layui-form-item">
               <label for="username" class="layui-form-label">
                   <span class="x-red">*</span>内容
               </label>
               <div class="layui-input-inline">
-                  <input type="text" id="username" name="title" required="" lay-verify="required"
+                  <input type="text" id="username" name="content" required="" lay-verify="required"
                   autocomplete="off" class="layui-input">
               </div>
               <div class="layui-form-mid layui-word-aux">
